@@ -24,4 +24,4 @@ The SimPL applies to the software’s source and object code and comes with any 
 
 ## The SimPL continues perpetually, except that your license rights end automatically if:
 * You do not abide by the “give back to the community” terms (your licensees get to keep their rights if they abide);
-* *Anyone prevents you from distributing the software under the terms of the SimPL.
+* Anyone prevents you from distributing the software under the terms of the SimPL.
