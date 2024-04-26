@@ -1,0 +1,12 @@
+# Cow Goes Moo Discord Bot
+This is just a silly Discord bot. It reads each message in each channel that is visible adn draws a random number. If the number is divisible by 2046, the bot will echo the user message into the same channel as cowspeak.
+
+# Details
+## Environment Variables
+* MOOCOWTOKEN - the Discord bot token
+* MOOCOWADMIN - the Discord UID of the admin.  This user is allowed to use `ping` and `list servers`.
+
+## Commands
+* `ping` - answers with Pong
+* `list servers` - lists the servers that the bot is currently in.
+
