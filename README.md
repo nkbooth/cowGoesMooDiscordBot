@@ -1,5 +1,8 @@
+[Cow Goes Moo Banner](CowGoesMooBanner.jpg)
 # Cow Goes Moo Discord Bot
 This is just a silly Discord bot. It reads each message in each channel that is visible adn draws a random number. If the number is divisible by 2046, the bot will echo the user message into the same channel via cowsay.
+
+[Cow Goes Moo is the best!](CowGoesMooIsTheBest.png)
 
 # Details
 ## Environment Variables
