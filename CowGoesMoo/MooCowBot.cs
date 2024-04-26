@@ -1,4 +1,6 @@
-﻿using System.Security.Cryptography;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using Cowsay;
 using Discord;
@@ -13,6 +15,8 @@ public class MooCowBot
 {
     private static readonly ulong AdminId = ulong.Parse(Environment.GetEnvironmentVariable("MOOBOTADMIN") ?? throw new ArgumentNullException($"Missing MOOBOTADMIN environment variable"));
     private static readonly string DiscordToken = Environment.GetEnvironmentVariable("MOOBOTTOKEN") ?? throw new ArgumentException("Missing MOOBOTTOKEN environment variable");
+    private static readonly string LogoUrl = Environment.GetEnvironmentVariable("MOOBOTLOGOURL") ?? throw new ArgumentException("Missing MOOBOTLOGO environment variable");
+    
     private static DiscordSocketClient? _client;
 
     private static void Main() => new MooCowBot().MainAsync().GetAwaiter().GetResult();
@@ -77,6 +81,28 @@ public class MooCowBot
                     await replyMessageChannel.SendMessageAsync(pongText);
                 }
 
+                if (message.CleanContent.Equals("about cow"))
+                {
+                    var replyMessageChannel = (IMessageChannel)await _client!.GetChannelAsync(message.Channel.Id);
+                    var embed = new EmbedBuilder
+                    {
+                        Title = "About Cow Goes Moo!",
+                        Description =
+                            "The Cow Goes Moo is just a silly Discord bot made in an afternoon for my own amusement.  More information can be found at the GitHub - https://github.com/nkbooth/cowGoesMooDiscordBot",
+                        ImageUrl = LogoUrl,
+                        Author = new EmbedAuthorBuilder { Name = message.Author.Username }
+                    };
+                    embed.AddField("Servers", _client.Guilds.Count)
+                        .AddField("Latency", _client.Latency)
+                        .WithUrl("https://github.com/nkbooth/cowGoesMooDiscordBot")
+                        .WithCurrentTimestamp();
+                    
+                    await replyMessageChannel.SendMessageAsync(embed: embed.Build());
+                    var mooingCow =
+                        await DefaultCattleFarmer.RearCowWithDefaults($"{CowTypes.Default.GetEnumDescription()}");
+                    await replyMessageChannel.SendMessageAsync($"```{mooingCow.Say("Moo", isThought: false)}```");
+                }
+
                 if (message.CleanContent.Equals("list servers", StringComparison.InvariantCultureIgnoreCase))
                 {
                     var replyMessageChannel = (IMessageChannel)await _client!.GetChannelAsync(message.Channel.Id);
@@ -91,7 +117,7 @@ public class MooCowBot
                 }
             }
 
-            else if (RandomNumberGenerator.GetInt32(int.MinValue, int.MaxValue) % 2849 == 0 && message.Author.IsBot == false)
+            else if (RandomNumberGenerator.GetInt32(int.MinValue, int.MaxValue) % 2046 == 0 && message.Author.IsBot == false)
             {
                 const CowTypes cowType = CowTypes.Default;
                 var myCow = await DefaultCattleFarmer.RearCowWithDefaults($"{cowType.GetEnumDescription()}");

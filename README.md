@@ -6,12 +6,17 @@ This is just a silly Discord bot. It reads each message in each channel that is 
 
 # Details
 ## Environment Variables
-* MOOCOWTOKEN - the Discord bot token
-* MOOCOWADMIN - the Discord UID of the admin.  This user is allowed to use `ping` and `list servers`.
+* MOOBOTADMIN - the Discord bot token
+* MOOBOTTOKEN - the Discord UID of the admin.  This user is allowed to use `ping` and `list servers`
+* MOOBOTLOGOURL - URL to the image to use as the logo image in embeds
 
-## Commands
+## Admin Commands
 * `ping` - answers with Pong
-* `list servers` - lists the servers that the bot is currently in.
+* `list servers` - lists the servers that the bot is currently in
+* `about cow` - shows an About message
+
+## User Commands
+None.  It's not that kind of bot.  The admin commands really were just so I could test the thing.
 
 # Credit
 [From Wikipedia](https://en.wikipedia.org/wiki/Cowsay):
