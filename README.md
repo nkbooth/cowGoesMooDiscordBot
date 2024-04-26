@@ -16,7 +16,7 @@ This is just a silly Discord bot. It reads each message in each channel that is 
 * `about cow` - shows an About message
 
 ## User Commands
-None.  It's not that kind of bot.  The admin commands really were just so I could test the thing. 
+None.  It's not that kind of bot.  The admin commands really were just so I could test the thing.
 
 # Credit
 [From Wikipedia](https://en.wikipedia.org/wiki/Cowsay):
