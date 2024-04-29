@@ -80,7 +80,7 @@ public class MooCowBot
                     await replyMessageChannel.SendMessageAsync(pongText);
                 }
 
-                if (message.CleanContent.Equals("about cow"))
+                if (message.CleanContent.Equals("about cow", StringComparison.CurrentCultureIgnoreCase))
                 {
                     var replyMessageChannel = (IMessageChannel)await _client!.GetChannelAsync(message.Channel.Id);
                     var embed = new EmbedBuilder
