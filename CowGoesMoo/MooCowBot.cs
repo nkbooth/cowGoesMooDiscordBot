@@ -14,6 +14,7 @@ public class MooCowBot
     private static readonly ulong AdminId = ulong.Parse(Environment.GetEnvironmentVariable("MOOBOTADMIN") ?? throw new ArgumentNullException($"Missing MOOBOTADMIN environment variable"));
     private static readonly string DiscordToken = Environment.GetEnvironmentVariable("MOOBOTTOKEN") ?? throw new ArgumentException("Missing MOOBOTTOKEN environment variable");
     private static readonly string LogoUrl = Environment.GetEnvironmentVariable("MOOBOTLOGOURL") ?? throw new ArgumentException("Missing MOOBOTLOGO environment variable");
+    private const int OddsDivisor = 512;
     
     private static DiscordSocketClient? _client;
 
@@ -115,7 +116,7 @@ public class MooCowBot
                 }
             }
 
-            else if (RandomNumberGenerator.GetInt32(int.MinValue, int.MaxValue) % 2046 == 0 && message.Author.IsBot == false)
+            else if (RandomNumberGenerator.GetInt32(int.MinValue, int.MaxValue) % OddsDivisor == 0 && message.Author.IsBot == false)
             {
                 const CowTypes cowType = CowTypes.Default;
                 var myCow = await DefaultCattleFarmer.RearCowWithDefaults($"{cowType.GetEnumDescription()}");

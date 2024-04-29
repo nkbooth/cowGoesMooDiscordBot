@@ -1,14 +1,17 @@
 ![Cow Goes Moo Banner](CowGoesMooBanner.jpg)
 # Cow Goes Moo Discord Bot
-This is just a silly Discord bot. It reads each message in each channel that is visible and draws a random number. If the number is divisible by 2046, the bot will echo the user message into the same channel via cowsay.
+This is just a silly Discord bot. It reads each message in each channel that is visible and draws a random number. If the number is divisible by 512, the bot will echo the user message into the same channel via cowsay.
 
 ![Cow Goes Moo is the best!](CowGoesMooIsTheBest.png)
 
 # Details
 ## Environment Variables
 * **MOOBOTADMIN** - _the Discord bot token_
-* **MOOBOTTOKEN** - _the Discord UID of the admin.  This user is allowed to use `ping` and `list servers`_
+* **MOOBOTTOKEN** - _the Discord UID of the admin.  This user is allowed to use [Admin Commands](#admin-commands)_
 * **MOOBOTLOGOURL** - _URL to the image to use as the logo image in embeds_
+
+## Runtime Settings
+* **OddsDivisor** - _Changes the odds weighting_
 
 ## Admin Commands
 * `ping` - answers with Pong
