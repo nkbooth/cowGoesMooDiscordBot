@@ -24,4 +24,5 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-            dotnet publish -c Release -r linux-arm64 --self-contained true /p:UseAppHost=true
+    - name: Publish
+      run: dotnet publish -c Release -r linux-arm64 --self-contained true /p:UseAppHost=true
