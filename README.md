@@ -4,6 +4,8 @@ This is just a silly Discord bot. It reads each message in each channel that is 
 
 ![Cow Goes Moo is the best!](CowGoesMooIsTheBest.png)
 
+[Invite the Cow to your Discord server](https://discord.com/oauth2/authorize?client_id=1233051383310192720&permissions=274877975552&scope=bot)
+
 # Details
 ## Environment Variables
 * **MOOBOTADMIN** - _the Discord bot token_
