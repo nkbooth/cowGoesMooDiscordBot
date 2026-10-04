@@ -1,3 +1,5 @@
+> **Moved to Codeberg:** https://codeberg.org/alatartheblue/cowGoesMooDiscordBot — this GitHub copy is archived and no longer updated.
+
 ![Cow Goes Moo Banner](CowGoesMooBanner.jpg)
 # Cow Goes Moo Discord Bot
 This is just a silly Discord bot. It reads each message in each channel that is visible and draws a random number. If the number is divisible by 512, the bot will echo the user message into the same channel via cowsay.
